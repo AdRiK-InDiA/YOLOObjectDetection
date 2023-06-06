@@ -20,7 +20,7 @@ def index():
 @app.route('/predict',methods=['GET','POST']) # type: ignore
 def predict_datapoint():
     	if request.method == "POST":
-            image = request.files['file']
+            image = request.files['file1']
 
             if image.filename == '':
                 print("Image must have a file name")

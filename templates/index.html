@@ -1,20 +1,34 @@
+<!DOCTYPE html>
 <html>
-  <head>
-    <style>
-      h2{
-          font-family: tahoma
-      }
-      </style>
-  </head>
-<title>Python Flask File Upload Example</title>
-<h2>Select a file to upload</h2>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<form method="post" action="{{url_for('predict_datapoint')}}" enctype="multipart/form-data">
-		<p>
-			<input type="file" name="file" autocomplete="off" required>
-		</p>
-    <p>
-		<input type="submit" value="Submit">
-	</p>
-</form>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+	<link rel="stylesheet" type="text/css" href= "{{ url_for('static',filename='css/style.css') }}">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+	<title>YOLO</title>
+</head>
+<body>
+	
+	<div class="file__upload">
+		<div class="header">
+			
+			<p><i class="fa fa-cloud-upload fa-2x"></i><span><span>up</span>load</span></p>			
+		</div>
+		<form class="body" method="post" action= "{{url_for('predict_datapoint')}}" enctype="multipart/form-data">
+			<b>Upload Your Files and Detect Objects! Using YOLO </b><br>
+			<div class="upload-btn-wrapper">
+				<label for="file1" class="custom-file-upload">
+					<i class="fa fa-cloud-upload"></i> Upload Image
+				  </label>
+				<input type="file" name="file1" id="file1">
+				<br>
+			</div>
+			<br>
+			<input type="submit" id="submit">
+		</form>
+	</div>
+</body>
 </html>
