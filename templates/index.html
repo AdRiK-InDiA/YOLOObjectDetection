@@ -6,7 +6,7 @@
 
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
-	<link rel="stylesheet" type="text/css" href= "{{ url_for('static',filename='css/style.css') }}">
+	<link rel="stylesheet" type="text/css" href= "{{url_for('static',filename='css/style.css')}}">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 	<title>YOLO</title>
 </head>
@@ -18,17 +18,25 @@
 			<p><i class="fa fa-cloud-upload fa-2x"></i><span><span>up</span>load</span></p>			
 		</div>
 		<form class="body" method="post" action= "{{url_for('predict_datapoint')}}" enctype="multipart/form-data">
-			<b>Upload Your Files and Detect Objects! Using YOLO </b><br>
+			<b>Upload Your Files and Detect Objects Using YOLO ! </b><br>
 			<div class="upload-btn-wrapper">
 				<label for="file1" class="custom-file-upload">
 					<i class="fa fa-cloud-upload"></i> Upload Image
 				  </label>
-				<input type="file" name="file1" id="file1">
+				<input type="file" name="file1" id="file1" onchange="getImage(this.value);">
 				<br>
+				<div id="display_image"></div>
 			</div>
 			<br>
 			<input type="submit" id="submit">
 		</form>
 	</div>
+	<script type="text/javascript">
+		function getImage(image_name)
+		{
+			var newimg=image_name.replace(/^.*\\/,"");
+			$('#display_image').html(newimg)
+		}
+	</script>
 </body>
 </html>
