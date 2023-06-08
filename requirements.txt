@@ -13,7 +13,7 @@ PyYAML
 requests
 scipy
 thop  # FLOPs computation
-torch>=2.0.1  # see https://pytorch.org/get-started/locally (recommended)
+torch>=1.7.0  # see https://pytorch.org/get-started/locally (recommended)
 torchvision>=0.8.1
 tqdm
 ultralytics>=8.0.111
