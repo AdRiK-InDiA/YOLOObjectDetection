@@ -13,10 +13,10 @@ PyYAML
 requests
 scipy
 thop  # FLOPs computation
-torch # see https://pytorch.org/get-started/locally (recommended)
-torchvision
+torch>=2.0.1  # see https://pytorch.org/get-started/locally (recommended)
+torchvision>=0.8.1
 tqdm
-ultralytics
+ultralytics>=8.0.111
 # protobuf  # https://github.com/ultralytics/yolov5/issues/8012
 
 # Logging ---------------------------------------------------------------------
