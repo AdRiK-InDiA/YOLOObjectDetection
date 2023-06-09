@@ -22,7 +22,7 @@ ultralytics #>=8.0.111
 # tensorboard>=2.4.1
 # clearml>=1.2.0
 # comet
-
+flask
 # Plotting --------------------------------------------------------------------
 pandas #>=1.1.4
 seaborn #>=0.11.0
