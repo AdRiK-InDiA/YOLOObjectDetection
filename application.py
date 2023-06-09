@@ -9,12 +9,12 @@ import time
 import cv2
 import torch
 from werkzeug.utils import secure_filename
-import sys
-sys.path.append(os.path.join(os.getcwd(),'src'))
 import DataClean
 
 application = Flask(__name__)
 app=application
+
+model = torch.hub.load("ultralytics/yolov5", "yolov5s")  # or yolov5n - yolov5x6, custom
 
 @app.route('/')
 def index():
@@ -30,7 +30,6 @@ def predict_datapoint():
             DataClean.clean_static()
             filename = secure_filename(image.filename)
             image.save(os.path.join(os.getcwd(),'static','images',filename))
-            model = torch.hub.load("ultralytics/yolov5", "yolov5s")  # or yolov5n - yolov5x6, custom
             name = filename
             path = os.path.join(os.getcwd(),'static','images',name)
             img = cv2.imread(path)
