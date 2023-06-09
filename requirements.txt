@@ -37,7 +37,7 @@ flask
 # tensorflow>=2.4.0  # TF exports (-cpu, -aarch64, -macos)
 # tensorflowjs>=3.9.0  # TF.js export
 # openvino-dev  # OpenVINO export
-
+flask_cors
 # Deploy ----------------------------------------------------------------------
 setuptools #>=65.5.1 # Snyk vulnerability fix
 # tritonclient[all]~=2.24.0

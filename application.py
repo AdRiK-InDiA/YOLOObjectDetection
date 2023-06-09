@@ -1,4 +1,5 @@
 from flask import Flask,request,render_template
+from flask_cors import CORS,cross_origin
 import numpy as np
 import pandas as pd
 import warnings
@@ -16,10 +17,12 @@ app=application
 model = torch.hub.load("ultralytics/yolov5", "yolov5s")  # or yolov5n - yolov5x6, custom
 
 @app.route('/')
+@cross_origin()
 def index():
     return render_template('index.html')
 
 @app.route('/predict',methods=['GET','POST']) # type: ignore
+@cross_origin()
 def predict_datapoint():
     	if request.method == "POST":
             image = request.files['file1']
